@@ -1,84 +1,99 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sticky Header
-    const header = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    // Custom Cursor
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Dot follows instantly
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Outline has slight delay via CSS transitions usually, 
+        // but let's animate it with JS for smoothness if preferred, 
+        // or just use direct assignment (CSS transition handles the lag)
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
     });
 
-    // Mobile Menu Toggle
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('.nav-menu');
+    // Loader Remove
+    const loader = document.querySelector('.loader');
+    const revealTexts = document.querySelectorAll('.reveal-text');
+    const revealImage = document.querySelector('.reveal-image');
 
-    if (mobileBtn && nav) {
-        mobileBtn.addEventListener('click', () => {
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'flex';
-            }
-        });
-    }
+    setTimeout(() => {
+        loader.classList.add('hidden');
+        
+        // Trigger initial hero animations after loader hides
+        setTimeout(() => {
+            revealTexts.forEach(el => el.classList.add('active'));
+            if(revealImage) revealImage.classList.add('active');
+        }, 800);
+    }, 1500);
 
-    // Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    // Scroll Animations
+    const scrollRevealImages = document.querySelectorAll('.reveal-image-scroll');
+    const parallaxImgs = document.querySelectorAll('.parallax-img');
+
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -100px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('active');
                 observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+    }, observerOptions);
+
+    scrollRevealImages.forEach(img => observer.observe(img));
+
+    // Simple Parallax Effect
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxImgs.forEach(img => {
+            const speed = 0.1;
+            const yPos = -(scrolled * speed);
+            img.style.transform = `translateY(${yPos}px)`;
+        });
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    // Accordion Logic
+    const accordionItems = document.querySelectorAll('.accordion-item');
 
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (window.innerWidth <= 768 && nav.style.display === 'flex') {
-                    nav.style.display = 'none';
-                }
+            // Close all
+            accordionItems.forEach(acc => {
+                acc.classList.remove('active');
+                acc.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            // Open if wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                const content = item.querySelector('.accordion-content');
+                content.style.maxHeight = content.scrollHeight + "px";
             }
         });
     });
-
-    // Form Submission
-    const form = document.getElementById('appointment-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button');
-            const originalText = btn.textContent;
-            
-            btn.textContent = 'Request Sent! ✓';
-            btn.style.backgroundColor = '#059669'; // Success green
-            
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.backgroundColor = '';
-                form.reset();
-            }, 3000);
-        });
+    
+    // Open first accordion by default
+    if(accordionItems.length > 0) {
+        accordionItems[0].classList.add('active');
+        const firstContent = accordionItems[0].querySelector('.accordion-content');
+        firstContent.style.maxHeight = firstContent.scrollHeight + "px";
     }
 });
