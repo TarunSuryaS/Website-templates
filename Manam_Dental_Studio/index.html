@@ -3,318 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manam Dental Studio | Modern Dental Care in Kolathur, Chennai</title>
-    <meta name="description" content="Manam Dental Studio – Modern, gentle dental care in Kolathur, Chennai. Led by Dr. Madhavi Kannan (BDS), 9+ years experience. Rated 5.0 stars. Book your visit today.">
+    <title>Manam Dental Studio | Kolathur, Chennai</title>
+    <meta name="description" content="Manam Dental Studio – Where art meets dentistry. Modern, gentle dental care by Dr. Madhavi Kannan (BDS). Kolathur, Chennai.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-inner">
-            <a href="#" class="nav-logo">
-                <span class="logo-mark">M</span>
-                <span class="logo-text">Manam <em>Dental Studio</em></span>
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#doctor">Doctor</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#contact">Contact</a>
+    <!-- Nav -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="n-logo">manam.</a>
+            <div class="n-links" id="nLinks">
+                <a href="#story">Story</a>
+                <a href="#craft">Craft</a>
+                <a href="#artist">Artist</a>
+                <a href="#voices">Voices</a>
+                <a href="#find-us">Find Us</a>
             </div>
-            <div class="nav-right">
-                <a href="tel:+919XXXXXXXXX" class="nav-phone">📞 Call Us</a>
-                <a href="#contact" class="nav-cta">Book Visit</a>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="#find-us" class="n-cta">Book a Visit ↗</a>
+            <button class="n-burger" id="burger" aria-label="Menu"><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
 
-        <!-- HERO -->
-        <section class="hero" id="home">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <div class="hero-pill">⭐ Rated 5.0 by Patients · Kolathur, Chennai</div>
-                    <h1>Your Smile.<br><span>Our Craft.</span></h1>
-                    <p>Welcome to Manam Dental Studio — where gentle hands, modern technology, and a warm studio environment come together to give you the smile you deserve.</p>
-                    <div class="hero-ctas">
-                        <a href="#contact" class="btn btn-primary">Book Appointment</a>
-                        <a href="#services" class="btn btn-ghost">View Services →</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="hs"><strong>9+</strong><span>Years Experience</span></div>
-                        <div class="hs"><strong>5.0★</strong><span>Patient Rating</span></div>
-                        <div class="hs"><strong>5000+</strong><span>Happy Patients</span></div>
-                    </div>
+        <!-- HERO — full screen split -->
+        <section class="hero">
+            <div class="hero-left">
+                <p class="hero-eyebrow">Dental Studio · Kolathur, Chennai</p>
+                <h1>Where Art<br>Meets<br><em>Dentistry.</em></h1>
+                <p class="hero-sub">A studio-crafted dental experience. Gentle hands. Modern science. Beautiful smiles.</p>
+                <div class="hero-actions">
+                    <a href="#find-us" class="btn-fill">Book Appointment</a>
+                    <a href="#craft" class="btn-line">Explore Services →</a>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-img-wrap">
-                        <img src="images/hero.png" alt="Manam Dental Studio – Modern Clinic Interior">
+            </div>
+            <div class="hero-right">
+                <img src="images/hero.png" alt="Manam Dental Studio">
+                <div class="hero-tag tag-1">
+                    <span class="tag-dot"></span> 5.0★ Perfect Rating
+                </div>
+                <div class="hero-tag tag-2">
+                    <span class="tag-dot pulse"></span> 9+ Years of Trust
+                </div>
+            </div>
+        </section>
+
+        <!-- HORIZONTAL STATS STRIP -->
+        <section class="strip">
+            <div class="strip-scroll">
+                <div class="strip-item"><strong>5.0</strong><span>Patient Rating</span></div>
+                <div class="strip-sep">◆</div>
+                <div class="strip-item"><strong>9+</strong><span>Years Experience</span></div>
+                <div class="strip-sep">◆</div>
+                <div class="strip-item"><strong>5000+</strong><span>Smiles Crafted</span></div>
+                <div class="strip-sep">◆</div>
+                <div class="strip-item"><strong>100%</strong><span>Sterile Protocol</span></div>
+                <div class="strip-sep">◆</div>
+                <div class="strip-item"><strong>Kolathur</strong><span>Chennai 600099</span></div>
+            </div>
+        </section>
+
+        <!-- STORY — offset layout -->
+        <section class="story" id="story">
+            <div class="story-inner">
+                <div class="story-label anim">( 01 — Our Story )</div>
+                <h2 class="story-title anim">Not a clinic.<br>A <em>studio.</em></h2>
+                <div class="story-cols">
+                    <div class="story-col anim">
+                        <p>At Manam, we believe a dental visit should feel like stepping into a thoughtfully designed space — not a cold, sterile room. That's why we built a <strong>dental studio</strong>: warm lighting, calming interiors, and a team that treats you like family.</p>
+                        <p>Founded by Dr. Madhavi Kannan, Manam Dental Studio has quietly become Kolathur's most loved dental practice — earning a perfect 5-star rating through genuine care, not advertising.</p>
                     </div>
-                    <div class="hero-card hc-1">
-                        <div class="hc-icon">🦷</div>
-                        <div><strong>Gentle Care</strong><small>Painless Treatments</small></div>
-                    </div>
-                    <div class="hero-card hc-2">
-                        <div class="hc-icon">✨</div>
-                        <div><strong>Studio Quality</strong><small>Modern Aesthetics</small></div>
+                    <div class="story-col anim d1">
+                        <p>Our philosophy is simple: <strong>listen first, treat gently, explain clearly</strong>. Whether it's a child's first visit or a complex implant procedure, every patient receives the same unhurried attention and world-class care.</p>
+                        <p>We invest in advanced sterilization, digital diagnostics, and continuous learning — because your trust deserves nothing less than excellence.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="about-top anim">
-                    <h4 class="tag">ABOUT US</h4>
-                    <h2>A Dental Studio, <br>Not Just a Clinic.</h2>
-                    <p class="about-lead">At Manam Dental Studio, we've reimagined the dental experience. No cold clinical walls. No anxiety. Just a warm, thoughtfully designed space where your comfort is the priority and your smile is the masterpiece.</p>
+        <!-- CRAFT (SERVICES) — card grid -->
+        <section class="craft" id="craft">
+            <div class="craft-inner">
+                <div class="craft-head anim">
+                    <div class="story-label">( 02 — Our Craft )</div>
+                    <h2>What we do <em>beautifully.</em></h2>
                 </div>
-                <div class="about-cards">
-                    <div class="ac anim">
-                        <div class="ac-num">01</div>
-                        <h3>Patient-First Approach</h3>
-                        <p>Every treatment plan begins with listening. We take the time to understand your concerns, explain options clearly, and ensure you're comfortable every step of the way.</p>
+                <div class="craft-grid">
+                    <div class="craft-card anim">
+                        <div class="cc-num">01</div>
+                        <h3>General & Preventive</h3>
+                        <p>Oral exams, professional scaling, tooth-colored fillings, fluoride treatment. The foundation of a lasting smile.</p>
                     </div>
-                    <div class="ac anim d1">
-                        <div class="ac-num">02</div>
-                        <h3>Modern Equipment</h3>
-                        <p>From digital X-rays to advanced sterilization, we invest in the latest dental technology to ensure precision, safety, and the best possible outcomes for every procedure.</p>
+                    <div class="craft-card anim d1">
+                        <div class="cc-num">02</div>
+                        <h3>Painless Root Canal</h3>
+                        <p>Single-sitting RCT with rotary endodontics. We save your natural tooth and eliminate infection — without the pain.</p>
                     </div>
-                    <div class="ac anim d2">
-                        <div class="ac-num">03</div>
-                        <h3>Studio Environment</h3>
-                        <p>Warm lighting, calming interiors, and a welcoming team create an atmosphere that puts even the most anxious patients at ease. Dentistry, redefined.</p>
+                    <div class="craft-card anim d2">
+                        <div class="cc-num">03</div>
+                        <h3>Smile Design & Cosmetics</h3>
+                        <p>Teeth whitening, porcelain veneers, composite bonding, and complete smile makeovers. Art for your teeth.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICES -->
-        <section class="services" id="services">
-            <div class="container">
-                <div class="section-header anim">
-                    <h4 class="tag">WHAT WE OFFER</h4>
-                    <h2>Our Services</h2>
-                    <p>Comprehensive dental care tailored to every member of your family — from routine check-ups to advanced cosmetic treatments.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="svc anim">
-                        <div class="svc-icon">🦷</div>
-                        <h3>General Dentistry</h3>
-                        <p>Oral exams, professional cleaning & scaling, tooth-colored fillings, and preventive fluoride treatments to keep your smile healthy.</p>
-                    </div>
-                    <div class="svc anim d1">
-                        <div class="svc-icon">⚡</div>
-                        <h3>Root Canal Treatment</h3>
-                        <p>Painless, single-sitting RCT using rotary endodontic instruments. We save your natural teeth and eliminate infection with care.</p>
-                    </div>
-                    <div class="svc anim d2">
-                        <div class="svc-icon">😁</div>
-                        <h3>Cosmetic Dentistry</h3>
-                        <p>Teeth whitening, porcelain veneers, smile designing, and tooth jewellery to give you that confident, radiant smile.</p>
-                    </div>
-                    <div class="svc anim">
-                        <div class="svc-icon">📏</div>
+                    <div class="craft-card anim">
+                        <div class="cc-num">04</div>
                         <h3>Braces & Aligners</h3>
-                        <p>Metal braces, ceramic braces, and invisible clear aligners to correct crooked teeth and bite issues for all ages.</p>
+                        <p>Metal braces, ceramic braces, and invisible clear aligners for all ages. Straight teeth, confident smile.</p>
                     </div>
-                    <div class="svc anim d1">
-                        <div class="svc-icon">🔩</div>
-                        <h3>Dental Implants</h3>
-                        <p>Permanent titanium implants to replace missing teeth with natural-looking, long-lasting results.</p>
+                    <div class="craft-card anim d1">
+                        <div class="cc-num">05</div>
+                        <h3>Implants & Prosthetics</h3>
+                        <p>Titanium implants, crowns, bridges, and dentures. Permanent, natural-looking solutions for missing teeth.</p>
                     </div>
-                    <div class="svc anim d2">
-                        <div class="svc-icon">🏥</div>
+                    <div class="craft-card anim d2">
+                        <div class="cc-num">06</div>
                         <h3>Extractions & Surgery</h3>
-                        <p>Safe, painless wisdom tooth removal and minor oral surgical procedures performed with utmost precision.</p>
+                        <p>Painless wisdom tooth removal, cyst excision, and minor oral surgery with precision and care.</p>
                     </div>
-                    <div class="svc anim">
-                        <div class="svc-icon">👶</div>
+                    <div class="craft-card anim">
+                        <div class="cc-num">07</div>
                         <h3>Kids' Dentistry</h3>
-                        <p>Child-friendly dental care — fluoride application, sealants, space maintainers, and cavity prevention in a fun, stress-free environment.</p>
+                        <p>Fun, stress-free dental visits. Fluoride, sealants, space maintainers, and cavity prevention for little smiles.</p>
                     </div>
-                    <div class="svc anim d1">
-                        <div class="svc-icon">🪥</div>
-                        <h3>Gum Care</h3>
-                        <p>Deep scaling, root planing, gum surgery, and depigmentation treatment for healthy, pink gums and fresh breath.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DOCTOR -->
-        <section class="doctor" id="doctor">
-            <div class="container doctor-grid">
-                <div class="doc-img anim">
-                    <img src="images/doctor.png" alt="Dr. Madhavi Kannan – BDS, Dental Surgeon">
-                    <div class="doc-badge">
-                        <span>🩺</span>
-                        <div><strong>9+ Years</strong><small>Clinical Experience</small></div>
-                    </div>
-                </div>
-                <div class="doc-info anim d1">
-                    <h4 class="tag">MEET YOUR DENTIST</h4>
-                    <h2>Dr. Madhavi Kannan <span>BDS</span></h2>
-                    <div class="doc-quals">
-                        <div class="dq"><strong>BDS</strong><small>Bachelor of Dental Surgery</small></div>
-                        <div class="dq"><strong>9+ Years</strong><small>Clinical Practice</small></div>
-                        <div class="dq"><strong>5.0 ★</strong><small>Patient Rating</small></div>
-                    </div>
-                    <p>Dr. Madhavi Kannan is the heart and soul behind Manam Dental Studio. With over 9 years of hands-on clinical experience, she brings a rare combination of technical expertise and genuine warmth to every patient interaction.</p>
-                    <p>Known for her gentle approach and clear communication, Dr. Madhavi ensures that every patient — from a nervous first-timer to a returning regular — feels heard, comfortable, and confident in their treatment plan.</p>
-                    <p>Her philosophy is simple: <strong>treat every patient like family</strong>. That philosophy has earned Manam Dental Studio a perfect 5-star rating and the trust of thousands of families in Kolathur and beyond.</p>
-                    <div class="doc-skills">
-                        <span>✓ Painless Procedures</span>
-                        <span>✓ Clear Communication</span>
-                        <span>✓ Gentle with Kids</span>
-                        <span>✓ Cosmetic Expertise</span>
+                    <div class="craft-card anim d1">
+                        <div class="cc-num">08</div>
+                        <h3>Gum Therapy</h3>
+                        <p>Deep scaling, root planing, flap surgery, and gum depigmentation for healthy, pink gums.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- GALLERY -->
-        <section class="gallery" id="gallery">
-            <div class="container">
-                <div class="section-header anim">
-                    <h4 class="tag">OUR SPACE</h4>
-                    <h2>Inside the Studio</h2>
-                    <p>A clean, calming, and beautifully designed space built around your comfort.</p>
+        <!-- ARTIST (DOCTOR) — editorial layout -->
+        <section class="artist" id="artist">
+            <div class="artist-inner">
+                <div class="artist-img anim">
+                    <img src="images/doctor.png" alt="Dr. Madhavi Kannan, BDS">
                 </div>
-                <div class="gallery-grid">
-                    <div class="gal-item gi-wide anim"><img src="images/clinic.png" alt="Manam Dental Studio Interior"><div class="gal-label">The Treatment Room</div></div>
-                    <div class="gal-item anim d1"><img src="images/equipment.png" alt="Modern Dental Equipment"><div class="gal-label">Advanced Technology</div></div>
-                    <div class="gal-item anim d2"><img src="images/hero.png" alt="Welcoming Space"><div class="gal-label">Welcoming Reception</div></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- REVIEWS -->
-        <section class="reviews" id="reviews">
-            <div class="container">
-                <div class="section-header anim">
-                    <h4 class="tag">PATIENT LOVE</h4>
-                    <h2>What People Say</h2>
-                    <div class="review-badge">
-                        <span class="rb-stars">★★★★★</span>
-                        <strong>5.0 / 5</strong>
-                        <small>Perfect Rating</small>
+                <div class="artist-info anim d1">
+                    <div class="story-label">( 03 — The Artist )</div>
+                    <h2>Dr. Madhavi Kannan</h2>
+                    <div class="artist-meta">
+                        <span>BDS</span>
+                        <span>9+ Years</span>
+                        <span>5.0★ Rated</span>
                     </div>
-                </div>
-                <div class="reviews-grid">
-                    <div class="rev anim">
-                        <div class="rev-stars">★★★★★</div>
-                        <p>"Dr. Madhavi is incredibly gentle and patient. She explained everything so clearly that I wasn't anxious at all. My root canal was completely painless. Best dental experience I've ever had!"</p>
-                        <div class="rev-author">
-                            <div class="rev-av">RK</div>
-                            <div><strong>Rajesh K.</strong><small>Kolathur</small></div>
-                        </div>
-                    </div>
-                    <div class="rev anim d1">
-                        <div class="rev-stars">★★★★★</div>
-                        <p>"The clinic is so clean and beautifully maintained — it doesn't feel like a dental clinic at all! My kids actually look forward to their visits. Highly recommend Manam Dental Studio."</p>
-                        <div class="rev-author">
-                            <div class="rev-av">SM</div>
-                            <div><strong>Swetha M.</strong><small>Villivakkam</small></div>
-                        </div>
-                    </div>
-                    <div class="rev anim d2">
-                        <div class="rev-stars">★★★★★</div>
-                        <p>"Got my teeth whitening done here and the results are amazing. Dr. Madhavi took her time to get it just right. The studio vibe is so calming. Love this place!"</p>
-                        <div class="rev-author">
-                            <div class="rev-av">AP</div>
-                            <div><strong>Arun P.</strong><small>Perambur</small></div>
-                        </div>
+                    <p>The heart behind Manam. Dr. Madhavi brings a rare blend of clinical precision and genuine warmth. Known for her gentle chairside manner and crystal-clear explanations, she transforms anxious patients into confident smilers.</p>
+                    <p>She started Manam with a simple belief: <strong>"Treat every patient like family."</strong> That philosophy has earned her a perfect 5-star rating and the trust of thousands of families across Kolathur and beyond.</p>
+                    <div class="artist-tags">
+                        <span>Painless Procedures</span>
+                        <span>Clear Communication</span>
+                        <span>Gentle with Kids</span>
+                        <span>Cosmetic Expert</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section class="contact" id="contact">
-            <div class="container contact-grid">
-                <div class="contact-left anim">
-                    <h4 class="tag">VISIT US</h4>
-                    <h2>Let's Preserve<br>Your Smile</h2>
-                    <p>Walk in or book ahead — we're always happy to welcome you to Manam Dental Studio.</p>
+        <!-- SPACE (GALLERY) -->
+        <section class="space">
+            <div class="space-inner">
+                <div class="craft-head anim">
+                    <div class="story-label">( 04 — The Space )</div>
+                    <h2>Step inside <em>the studio.</em></h2>
+                </div>
+                <div class="space-grid">
+                    <div class="space-img si-big anim"><img src="images/clinic.png" alt="Treatment Room"><span>The Treatment Suite</span></div>
+                    <div class="space-img anim d1"><img src="images/equipment.png" alt="Equipment"><span>Advanced Technology</span></div>
+                    <div class="space-img anim d2"><img src="images/hero.png" alt="Reception"><span>The Welcome Area</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VOICES (REVIEWS) -->
+        <section class="voices" id="voices">
+            <div class="voices-inner">
+                <div class="craft-head anim">
+                    <div class="story-label">( 05 — Voices )</div>
+                    <h2>Real patients. <em>Real words.</em></h2>
+                    <div class="voices-rating">★★★★★ <strong>5.0 / 5</strong> <span>Perfect Rating</span></div>
+                </div>
+                <div class="voices-grid">
+                    <div class="voice anim">
+                        <p>"Dr. Madhavi is magic. I've been terrified of dentists my entire life, and she made me feel completely at ease. My root canal was genuinely painless. I actually want to go back."</p>
+                        <div class="voice-who"><div class="vw-av">RK</div><div><strong>Rajesh K.</strong><small>Kolathur</small></div></div>
+                    </div>
+                    <div class="voice anim d1">
+                        <p>"This place doesn't feel like a clinic. My kids love coming here — they call it 'the tooth studio'. It's clean, beautiful, and the staff is incredibly kind. Five stars doesn't feel like enough."</p>
+                        <div class="voice-who"><div class="vw-av">SM</div><div><strong>Swetha M.</strong><small>Villivakkam</small></div></div>
+                    </div>
+                    <div class="voice anim d2">
+                        <p>"Got my teeth whitened and two veneers done. The results are stunning — Dr. Madhavi has an artist's eye. The entire experience was calm, professional, and so well-organized."</p>
+                        <div class="voice-who"><div class="vw-av">AP</div><div><strong>Arun P.</strong><small>Perambur</small></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIND US (CONTACT) -->
+        <section class="find" id="find-us">
+            <div class="find-inner">
+                <div class="find-left anim">
+                    <div class="story-label">( 06 — Find Us )</div>
+                    <h2>Your smile<br>starts <em>here.</em></h2>
+                    <p class="find-sub">Walk in, call ahead, or book online. We'd love to meet you.</p>
                     
-                    <div class="c-details">
-                        <div class="cd">
-                            <div class="cd-i">📍</div>
-                            <div>
-                                <strong>Studio Location</strong>
-                                <p>No. 5, Mariamman Nagar, Vivekananda Main Road,<br>Kolathur, Chennai – 600099</p>
-                            </div>
+                    <div class="find-details">
+                        <div class="fd">
+                            <div class="fd-label">STUDIO</div>
+                            <p>No. 5, Mariamman Nagar,<br>Vivekananda Main Road,<br>Kolathur, Chennai – 600099</p>
                         </div>
-                        <div class="cd">
-                            <div class="cd-i">📞</div>
-                            <div>
-                                <strong>Phone</strong>
-                                <a href="tel:+919XXXXXXXXX" class="phone-big">+91 9XXX XXX XXX</a>
-                            </div>
+                        <div class="fd">
+                            <div class="fd-label">CALL</div>
+                            <a href="tel:+919XXXXXXXXX" class="fd-phone">+91 9XXX XXX XXX</a>
                         </div>
-                        <div class="cd">
-                            <div class="cd-i">🕒</div>
-                            <div>
-                                <strong>Studio Hours</strong>
-                                <div class="hours">
-                                    <div class="hr"><span>Monday – Saturday</span><span>By Appointment</span></div>
-                                    <div class="hr"><span>Sunday</span><span>Closed</span></div>
-                                </div>
+                        <div class="fd">
+                            <div class="fd-label">HOURS</div>
+                            <div class="fd-hours">
+                                <div><span>Mon – Sat</span><strong>By Appointment</strong></div>
+                                <div><span>Sunday</span><strong>Closed</strong></div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="contact-right anim d1">
-                    <div class="form-box">
+                <div class="find-right anim d1">
+                    <form class="find-form" id="bookForm">
                         <h3>Book Your Visit</h3>
-                        <p>Fill your details and our team will reach out to confirm your appointment slot.</p>
-                        <form id="bookingForm">
-                            <div class="fg">
-                                <label for="fname">Full Name *</label>
-                                <input type="text" id="fname" placeholder="Your name" required>
-                            </div>
-                            <div class="form-2col">
-                                <div class="fg">
-                                    <label for="fphone">Phone *</label>
-                                    <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" required>
-                                </div>
-                                <div class="fg">
-                                    <label for="fage">Age</label>
-                                    <input type="number" id="fage" placeholder="Age" min="1" max="120">
-                                </div>
-                            </div>
-                            <div class="fg">
-                                <label for="freason">Reason for Visit *</label>
-                                <select id="freason" required>
-                                    <option value="" disabled selected>Select a reason</option>
-                                    <option>General Check-up & Cleaning</option>
-                                    <option>Toothache / Pain</option>
-                                    <option>Root Canal Treatment</option>
-                                    <option>Teeth Whitening</option>
-                                    <option>Braces / Aligners</option>
-                                    <option>Dental Implant</option>
-                                    <option>Wisdom Tooth Issue</option>
-                                    <option>Child's Dental Visit</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Request Appointment</button>
-                        </form>
-                    </div>
+                        <div class="ff">
+                            <input type="text" placeholder="Your name *" required>
+                        </div>
+                        <div class="ff-row">
+                            <div class="ff"><input type="tel" placeholder="Phone *" required></div>
+                            <div class="ff"><input type="number" placeholder="Age" min="1" max="120"></div>
+                        </div>
+                        <div class="ff">
+                            <select required>
+                                <option value="" disabled selected>Reason for visit *</option>
+                                <option>General Check-up</option>
+                                <option>Toothache / Pain</option>
+                                <option>Root Canal</option>
+                                <option>Teeth Whitening</option>
+                                <option>Braces / Aligners</option>
+                                <option>Implant</option>
+                                <option>Child's Visit</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-fill btn-block" id="subBtn">Request Appointment →</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -322,41 +263,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="f-brand">
-                <a href="#" class="nav-logo">
-                    <span class="logo-mark">M</span>
-                    <span class="logo-text">Manam <em>Dental Studio</em></span>
-                </a>
-                <p class="f-tagline">"Your Smile. Our Craft."</p>
-                <p class="f-desc">Modern, gentle dental care in Kolathur, Chennai. Creating beautiful smiles with compassion and precision.</p>
+    <footer class="foot">
+        <div class="foot-inner">
+            <div class="foot-top">
+                <div class="foot-brand">
+                    <a href="#" class="n-logo">manam.</a>
+                    <p class="foot-tag">"Your Smile. Our Craft."</p>
+                </div>
+                <div class="foot-links">
+                    <a href="#story">Story</a>
+                    <a href="#craft">Craft</a>
+                    <a href="#artist">Artist</a>
+                    <a href="#voices">Voices</a>
+                    <a href="#find-us">Find Us</a>
+                </div>
             </div>
-            <div class="f-col">
-                <h4>Explore</h4>
-                <a href="#about">About Us</a>
-                <a href="#services">Services</a>
-                <a href="#doctor">Our Doctor</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#contact">Book Visit</a>
-            </div>
-            <div class="f-col">
-                <h4>Treatments</h4>
-                <a href="#services">General Dentistry</a>
-                <a href="#services">Root Canal</a>
-                <a href="#services">Cosmetic Dentistry</a>
-                <a href="#services">Braces & Aligners</a>
-                <a href="#services">Kids' Dentistry</a>
-            </div>
-            <div class="f-col">
-                <h4>Get in Touch</h4>
-                <p>Mariamman Nagar, Vivekananda Main Road, Kolathur, Chennai – 600099</p>
-                <br>
-                <a href="tel:+919XXXXXXXXX" class="f-phone">+91 9XXX XXX XXX</a>
-            </div>
-        </div>
-        <div class="footer-bar">
-            <div class="container">
+            <div class="foot-bottom">
                 <p>© 2024 Manam Dental Studio, Kolathur, Chennai. All Rights Reserved.</p>
             </div>
         </div>

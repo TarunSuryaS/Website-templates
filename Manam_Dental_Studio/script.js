@@ -1,64 +1,67 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===== NAVBAR SCROLL =====
-    const navbar = document.getElementById('navbar');
+    // ===== NAVBAR =====
+    const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 20);
+        nav.style.borderBottomColor = window.scrollY > 40
+            ? 'rgba(255,255,255,0.08)' : 'transparent';
     });
 
     // ===== MOBILE MENU =====
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-        navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => navLinks.classList.remove('open'));
-        });
+    const burger = document.getElementById('burger');
+    const nLinks = document.getElementById('nLinks');
+    if (burger && nLinks) {
+        burger.addEventListener('click', () => nLinks.classList.toggle('open'));
+        nLinks.querySelectorAll('a').forEach(a =>
+            a.addEventListener('click', () => nLinks.classList.remove('open'))
+        );
     }
 
     // ===== SCROLL REVEAL =====
     const animEls = document.querySelectorAll('.anim');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('show');
+                obs.unobserve(e.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-    animEls.forEach(el => observer.observe(el));
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    animEls.forEach(el => obs.observe(el));
 
     // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                const offset = navbar.offsetHeight + 8;
-                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top, behavior: 'smooth' });
+                const offset = nav.offsetHeight + 10;
+                window.scrollTo({
+                    top: target.getBoundingClientRect().top + window.pageYOffset - offset,
+                    behavior: 'smooth'
+                });
             }
         });
     });
 
     // ===== FORM =====
-    const form = document.getElementById('bookingForm');
-    const submitBtn = document.getElementById('submitBtn');
-    if (form && submitBtn) {
+    const form = document.getElementById('bookForm');
+    const btn = document.getElementById('subBtn');
+    if (form && btn) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const orig = submitBtn.textContent;
-            submitBtn.textContent = '✓ Request Sent!';
-            submitBtn.style.background = '#10B981';
-            submitBtn.disabled = true;
-
+            const orig = btn.textContent;
+            btn.textContent = '✓ Request Sent Successfully!';
+            btn.style.background = '#22C55E';
+            btn.style.color = '#fff';
+            btn.disabled = true;
             setTimeout(() => {
-                submitBtn.textContent = orig;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
+                btn.textContent = orig;
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.disabled = false;
                 form.reset();
             }, 3500);
         });
