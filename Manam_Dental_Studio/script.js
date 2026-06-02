@@ -1,64 +1,132 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===== MOBILE MENU =====
-    const burger = document.getElementById('burger');
-    const navMid = document.getElementById('navMid');
-    if (burger && navMid) {
-        burger.addEventListener('click', () => navMid.classList.toggle('open'));
-        navMid.querySelectorAll('a').forEach(a =>
-            a.addEventListener('click', () => navMid.classList.remove('open'))
-        );
-    }
+    // ===== HEADER SCROLL =====
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
-    // ===== SCROLL REVEAL =====
-    const animEls = document.querySelectorAll('.anim');
-    const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('show');
-                obs.unobserve(e.target);
+    // ===== MOBILE MENU =====
+    const mobileToggle = document.getElementById('mobileToggle');
+    const nav = document.getElementById('nav');
+    
+    // Create mobile menu overlay
+    const mobileMenu = document.createElement('div');
+    mobileMenu.style.position = 'fixed';
+    mobileMenu.style.top = '80px';
+    mobileMenu.style.left = '0';
+    mobileMenu.style.right = '0';
+    mobileMenu.style.bottom = '0';
+    mobileMenu.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+    mobileMenu.style.zIndex = '999';
+    mobileMenu.style.display = 'none';
+    mobileMenu.style.flexDirection = 'column';
+    mobileMenu.style.padding = '40px 24px';
+    mobileMenu.style.gap = '24px';
+    
+    // Copy links
+    const links = Array.from(nav.querySelectorAll('a')).map(a => {
+        const clone = a.cloneNode(true);
+        clone.style.fontSize = '1.5rem';
+        clone.style.fontWeight = '600';
+        clone.style.color = 'var(--text-main)';
+        return clone;
+    });
+    
+    links.forEach(link => {
+        mobileMenu.appendChild(link);
+        link.addEventListener('click', () => {
+            mobileMenu.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    document.body.appendChild(mobileMenu);
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'none') {
+                mobileMenu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-    animEls.forEach(el => obs.observe(el));
+    }
+
+    // ===== SCROLL REVEAL & FADE IN =====
+    const revealElements = document.querySelectorAll('.reveal, .fade-in');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+    
+    // Trigger initial animations for elements already in view
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('active');
+            }
+        });
+    }, 100);
 
     // ===== SMOOTH SCROLL =====
-    const nav = document.getElementById('nav');
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
+            
             e.preventDefault();
             const target = document.querySelector(href);
+            
             if (target) {
+                const offset = 100; // Account for fixed header
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({
-                    top: target.getBoundingClientRect().top + window.pageYOffset - nav.offsetHeight - 10,
+                    top: top,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // ===== FORM =====
-    const form = document.getElementById('conForm');
-    const btn = document.getElementById('subBtn');
-    if (form && btn) {
+    // ===== FORM HANDLING =====
+    const form = document.getElementById('appointmentForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (form && submitBtn) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const orig = btn.innerHTML;
-            btn.innerHTML = '<span class="cta-text">✓ REQUEST_SENT</span>';
-            btn.style.background = 'rgba(0,255,136,0.15)';
-            btn.style.color = '#00FF88';
-            btn.style.borderColor = 'rgba(0,255,136,0.3)';
-            btn.disabled = true;
+            
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Booking Confirmed!';
+            submitBtn.style.backgroundColor = '#10b981'; // Green
+            submitBtn.style.boxShadow = '0 4px 14px rgba(16, 185, 129, 0.3)';
+            submitBtn.disabled = true;
+            
             setTimeout(() => {
-                btn.innerHTML = orig;
-                btn.style.background = '';
-                btn.style.color = '';
-                btn.style.borderColor = '';
-                btn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.style.backgroundColor = '';
+                submitBtn.style.boxShadow = '';
+                submitBtn.disabled = false;
                 form.reset();
-            }, 3500);
+            }, 4000);
         });
     }
 });
