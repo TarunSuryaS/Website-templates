@@ -10,8 +10,8 @@
     --font-body: 'Manrope', sans-serif;
     
     --spacing-sm: 1rem;
-    --spacing-md: 2.5rem;
-    --spacing-lg: 5rem;
+    --spacing-md: 1.5rem; /* Tightened from 2.5rem */
+    --spacing-lg: 3rem;   /* Tightened from 5rem */
     
     --transition-slow: 1.2s cubic-bezier(0.77, 0, 0.175, 1);
     --transition-med: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none; /* For custom cursor */
+    cursor: none;
 }
 
 html {
@@ -132,7 +132,7 @@ h1, h2, h3 {
 
 .body-text {
     font-size: 1.125rem;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #4A4A4A;
     font-weight: 300;
 }
@@ -213,7 +213,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 1.5rem 2rem; /* Tightened */
     position: fixed;
     top: 0;
     width: 100%;
@@ -239,7 +239,7 @@ h1, h2, h3 {
 
 .nav-links {
     display: flex;
-    gap: 3rem;
+    gap: 2rem; /* Tightened */
     font-family: var(--font-body);
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -248,7 +248,7 @@ h1, h2, h3 {
 
 .book-btn {
     border: 1px solid #FFF;
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem; /* Tightened */
     font-family: var(--font-body);
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -266,17 +266,17 @@ h1, h2, h3 {
 
 /* Hero Section */
 .hero-section {
-    min-height: 100vh;
+    min-height: 85vh; /* Reduced from 100vh */
     padding: 0 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 .hero-subtitle {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-family: var(--font-body);
     font-size: 0.85rem;
     letter-spacing: 3px;
@@ -284,9 +284,9 @@ h1, h2, h3 {
 }
 
 .hero-title {
-    font-size: 7rem;
+    font-size: 6rem; /* Slightly reduced */
     line-height: 0.9;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     z-index: 2;
     position: relative;
 }
@@ -297,7 +297,7 @@ h1, h2, h3 {
     top: 50%;
     transform: translateY(-50%);
     width: 45%;
-    height: 70vh;
+    height: 60vh; /* Reduced */
     z-index: 1;
 }
 
@@ -311,7 +311,7 @@ h1, h2, h3 {
 .marquee-container {
     width: 100%;
     overflow: hidden;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     background: var(--text-main);
@@ -338,19 +338,19 @@ h1, h2, h3 {
 
 /* Stats Section */
 .stats-section {
-    padding: 6rem 4rem;
+    padding: 4rem 2rem; /* Tightened */
     border-bottom: 1px solid var(--border);
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     text-align: center;
 }
 
 .stat-number {
-    font-size: 4rem;
+    font-size: 3rem; /* Reduced */
     color: var(--gold);
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -366,7 +366,7 @@ h1, h2, h3 {
 
 /* Philosophy */
 .philosophy-section {
-    padding: 8rem 4rem 4rem;
+    padding: 5rem 2rem 4rem; /* Tightened */
 }
 
 .philosophy-content {
@@ -375,29 +375,29 @@ h1, h2, h3 {
 }
 
 .philosophy-content .section-title {
-    font-size: 3.5rem;
+    font-size: 3rem; /* Reduced */
 }
 
 /* About Section */
 .about-section {
-    padding: 6rem 4rem 10rem;
+    padding: 3rem 2rem 5rem; /* Tightened */
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 3rem; /* Reduced from 6rem */
     align-items: center;
 }
 
 .section-title {
-    font-size: 4rem;
+    font-size: 3rem; /* Reduced */
     line-height: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .section-title span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--gold);
     font-family: var(--font-body);
     font-weight: 300;
@@ -407,12 +407,12 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--border);
 }
 
 .medallion {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .medallion-text strong {
@@ -431,7 +431,7 @@ h1, h2, h3 {
 
 .about-images {
     position: relative;
-    height: 700px;
+    height: 500px; /* Reduced */
 }
 
 .image-large {
@@ -455,7 +455,7 @@ h1, h2, h3 {
     width: 50%;
     height: 50%;
     z-index: 2;
-    border: 15px solid var(--bg-color);
+    border: 10px solid var(--bg-color); /* Reduced */
 }
 
 .image-small img {
@@ -466,16 +466,16 @@ h1, h2, h3 {
 
 /* Services Accordion */
 .services-section {
-    padding: 8rem 4rem;
+    padding: 5rem 2rem; /* Tightened */
     background-color: var(--bg-light-gray);
 }
 
 .services-header {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem; /* Tightened */
 }
 
 .accordion-container {
-    max-width: 1000px;
+    max-width: 900px; /* Tightened */
     margin: 0 auto;
 }
 
@@ -488,19 +488,19 @@ h1, h2, h3 {
 }
 
 .accordion-header {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0; /* Tightened */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .accordion-header h3 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced */
     transition: color 0.3s;
 }
 
 .accordion-header .icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     transition: transform 0.3s;
 }
@@ -520,8 +520,8 @@ h1, h2, h3 {
 }
 
 .accordion-content p {
-    padding-bottom: 2.5rem;
-    font-size: 1.25rem;
+    padding-bottom: 1.5rem; /* Tightened */
+    font-size: 1.15rem; /* Reduced */
     line-height: 1.6;
     color: #4A4A4A;
     max-width: 700px;
@@ -529,18 +529,18 @@ h1, h2, h3 {
 
 /* Gallery Section */
 .gallery-section {
-    padding: 8rem 4rem;
+    padding: 5rem 2rem; /* Tightened */
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem; /* Tightened */
 }
 
 .gallery-item {
     position: relative;
-    height: 60vh;
+    height: 50vh; /* Reduced */
     overflow: hidden;
 }
 
@@ -560,11 +560,11 @@ h1, h2, h3 {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 2rem;
+    padding: 1.5rem;
     background: linear-gradient(transparent, rgba(0,0,0,0.7));
     color: #FFF;
     font-family: var(--font-body);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
     opacity: 0;
     transition: opacity 0.5s;
@@ -576,42 +576,42 @@ h1, h2, h3 {
 
 /* Testimonials */
 .testimonials-section {
-    padding: 8rem 4rem;
+    padding: 5rem 2rem; /* Tightened */
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem; /* Tightened */
     max-width: 1200px;
     margin: var(--spacing-md) auto 0;
 }
 
 .testimonial-card {
-    padding: 3rem;
+    padding: 2rem; /* Tightened */
     border: 1px solid var(--border);
     background: var(--bg-color);
 }
 
 .stars {
     color: var(--gold);
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem; /* Reduced */
+    margin-bottom: 1rem;
     letter-spacing: 2px;
 }
 
 .quote {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.4rem; /* Reduced */
     font-style: italic;
     line-height: 1.4;
     color: var(--text-main);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .author {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #888;
@@ -619,18 +619,18 @@ h1, h2, h3 {
 
 /* Visit Section */
 .visit-section {
-    padding: 8rem 4rem 10rem;
+    padding: 5rem 2rem 6rem; /* Tightened */
 }
 
 .visit-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8rem;
+    gap: 4rem; /* Tightened from 8rem */
     align-items: center;
 }
 
 .visit-image {
-    height: 80vh;
+    height: 60vh; /* Reduced */
 }
 
 .visit-image img {
@@ -641,7 +641,7 @@ h1, h2, h3 {
 
 .huge-phone {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reduced */
     color: var(--text-main);
 }
 
@@ -649,17 +649,17 @@ h1, h2, h3 {
 .grand-footer {
     background-color: var(--text-main);
     color: var(--bg-color);
-    padding: 8rem 4rem 2rem;
+    padding: 5rem 2rem 1rem; /* Tightened */
     text-align: center;
     overflow: hidden;
 }
 
 .footer-huge-text {
-    font-size: 14vw;
+    font-size: 12vw; /* Reduced */
     line-height: 0.8;
     color: var(--gold);
     opacity: 0.9;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     white-space: nowrap;
 }
 
@@ -675,11 +675,11 @@ h1, h2, h3 {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .hero-title { font-size: 5rem; }
-    .hero-image-wrapper { width: 50%; height: 50vh; }
-    .about-grid, .visit-grid, .gallery-grid, .testimonials-grid { grid-template-columns: 1fr; gap: 4rem; }
-    .about-images { height: 500px; margin-top: 4rem; }
-    .visit-image { height: 50vh; order: 2; }
+    .hero-title { font-size: 4rem; }
+    .hero-image-wrapper { width: 50%; height: 40vh; }
+    .about-grid, .visit-grid, .gallery-grid, .testimonials-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-images { height: 400px; margin-top: 2rem; }
+    .visit-image { height: 40vh; order: 2; }
     .visit-info { order: 1; }
     .luxury-nav { padding: 1.5rem 2rem; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -687,15 +687,15 @@ h1, h2, h3 {
 
 @media (max-width: 768px) {
     .nav-links, .book-btn { display: none; }
-    .hero-section { padding: 100px 2rem 0; justify-content: flex-start; }
-    .hero-title { font-size: 3.5rem; margin-top: 2rem; }
-    .hero-image-wrapper { position: relative; right: auto; width: 100%; transform: none; margin-top: 2rem; height: 40vh; }
+    .hero-section { padding: 80px 2rem 0; justify-content: flex-start; min-height: auto; }
+    .hero-title { font-size: 3rem; margin-top: 1.5rem; }
+    .hero-image-wrapper { position: relative; right: auto; width: 100%; transform: none; margin-top: 2rem; height: 35vh; }
     
-    .stats-section, .philosophy-section, .about-section, .services-section, .gallery-section, .testimonials-section, .visit-section, .grand-footer { padding: 5rem 2rem; }
-    .section-title { font-size: 2.5rem; }
-    .accordion-header h3 { font-size: 1.5rem; }
+    .stats-section, .philosophy-section, .about-section, .services-section, .gallery-section, .testimonials-section, .visit-section, .grand-footer { padding: 4rem 1.5rem; }
+    .section-title { font-size: 2rem; }
+    .accordion-header h3 { font-size: 1.25rem; }
     .footer-bottom { flex-direction: column; gap: 1rem; }
-    .stat-number { font-size: 3rem; }
-    .quote { font-size: 1.5rem; }
+    .stat-number { font-size: 2.5rem; }
+    .quote { font-size: 1.2rem; }
     .stats-grid { grid-template-columns: 1fr; }
 }
