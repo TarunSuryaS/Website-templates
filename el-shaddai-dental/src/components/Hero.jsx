@@ -86,58 +86,30 @@ function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Visual Column (Interactive HTML Mock UI with floating cards) */}
+          {/* Right Visual Column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-5 relative"
           >
-            {/* Core Card Graphic */}
-            <div className="relative w-full h-[400px] md:h-[450px] bg-gradient-to-br from-clinicTeal/10 to-clinicSky/10 border border-slate-200/60 rounded-3xl p-6 shadow-2xl flex flex-col justify-between overflow-hidden">
-              {/* Absolutes for visual aesthetics */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-xl translate-x-10 -translate-y-10" />
+            <div className="relative w-full h-[400px] md:h-[480px] rounded-3xl p-2 shadow-2xl bg-white flex flex-col justify-between overflow-hidden">
+              <img 
+                src="/hero.png" 
+                alt="El-Shaddai Dental Clinic" 
+                className="w-full h-full object-cover rounded-2xl" 
+              />
               
-              {/* Doctor Header Mock */}
-              <div className="flex items-center space-x-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-white">
-                <div className="w-12 h-12 rounded-xl bg-gradient-teal-blue flex items-center justify-center text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-800 text-sm">Caring Dental Team</h4>
-                  <p className="text-xs text-slate-500">Implant & Tooth Pain Care Specialists</p>
-                </div>
-              </div>
-
-              {/* Graphic Center (Dental Cross/Logo backdrop) */}
-              <div className="my-auto flex flex-col items-center justify-center space-y-2 opacity-80">
-                <span className="text-6xl">🦷</span>
-                <span className="text-xs font-semibold tracking-widest text-slate-400 uppercase">El-Shaddai Dental</span>
-              </div>
-
-              {/* Patient Trust Quote Card */}
-              <div className="bg-slate-900 text-white p-4 rounded-2xl shadow-xl flex items-start space-x-3 border border-slate-800">
-                <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center font-bold text-xs shrink-0">
-                  ES
-                </div>
-                <div className="text-left">
-                  <p className="text-xs font-medium text-slate-300 italic">"Painless dental care located right in Kolathur. Highly affordable implant options!"</p>
-                  <span className="text-[10px] text-slate-400 font-bold mt-1 block">Local Patient Review</span>
-                </div>
-              </div>
-
               {/* Floating Card 1: 24 Hours Care */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-24 -left-6 glass-card p-3 rounded-xl flex items-center space-x-2.5 shadow-lg border border-white/80"
+                className="absolute top-8 -left-4 glass-card p-3 rounded-xl flex items-center space-x-2.5 shadow-lg border border-white/80 backdrop-blur-md bg-white/80"
               >
                 <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center text-clinicTeal">
                   <Clock className="w-4.5 h-4.5" />
                 </div>
-                <div className="text-left">
+                <div className="text-left pr-2">
                   <h5 className="font-bold text-xs text-slate-800">24 Hours Care</h5>
                   <p className="text-[10px] text-slate-500">Always Available</p>
                 </div>
@@ -147,7 +119,7 @@ function Hero() {
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-48 -right-6 glass-card p-3 rounded-xl flex items-center space-x-2.5 shadow-lg border border-white/80"
+                className="absolute top-32 -right-4 glass-card p-3 rounded-xl flex items-center space-x-2.5 shadow-lg border border-white/80 backdrop-blur-md bg-white/80"
               >
                 <div className="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center text-clinicSky">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4.5 h-4.5">
@@ -155,7 +127,7 @@ function Hero() {
                     <path d="M12 6v12M6 12h12"/>
                   </svg>
                 </div>
-                <div className="text-left">
+                <div className="text-left pr-2">
                   <h5 className="font-bold text-xs text-slate-800">Dental Implants</h5>
                   <p className="text-[10px] text-slate-500">Permanent Teeth</p>
                 </div>
@@ -165,32 +137,16 @@ function Hero() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute bottom-28 -left-8 glass-card p-3 rounded-xl flex items-center space-x-2.5 shadow-lg border border-white/80"
+                className="absolute bottom-10 -left-6 glass-card p-3 rounded-xl flex items-center space-x-2.5 shadow-lg border border-white/80 backdrop-blur-md bg-white/80"
               >
                 <div className="w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center text-rose-500 animate-pulse">
                   <AlertTriangle className="w-4.5 h-4.5" />
                 </div>
-                <div className="text-left">
+                <div className="text-left pr-2">
                   <h5 className="font-bold text-xs text-slate-800">Emergency Care</h5>
                   <p className="text-[10px] text-slate-500">Instant Pain Relief</p>
                 </div>
               </motion.div>
-
-              {/* Floating Card 4: Affordable Treatment */}
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-16 -right-6 glass-card p-3 rounded-xl flex items-center space-x-2.5 shadow-lg border border-white/80"
-              >
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-500">
-                  <Shield className="w-4.5 h-4.5" />
-                </div>
-                <div className="text-left">
-                  <h5 className="font-bold text-xs text-slate-800">Affordable Rates</h5>
-                  <p className="text-[10px] text-slate-500">Best Quality Care</p>
-                </div>
-              </motion.div>
-
             </div>
           </motion.div>
 
