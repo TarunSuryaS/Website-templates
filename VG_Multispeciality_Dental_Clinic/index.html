@@ -3,253 +3,404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V.G. Multispeciality Dental Clinic | Premium Dental Care</title>
+    <title>V.G. Multispeciality Dental Clinic | Premier Dental Care in Kolathur, Chennai</title>
+    <meta name="description" content="V.G. Multispeciality Dental Clinic in Kolathur, Chennai. Led by Dr. V. Aravinth M.D.S., Gold Medalist. Preventive care, implants, root canal, cosmetic dentistry. Rated 4.9 stars.">
     
-    <!-- Luxurious Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <!-- Custom Cursor -->
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">V.G.</div>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor (desktop only) -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Initial Loader -->
-    <div class="loader">
-        <div class="loader-text">V.G. MULTISPECIALITY</div>
+    <!-- Sticky Top Bar -->
+    <div class="top-strip">
+        <div class="container top-strip-inner">
+            <span>📍 Senthil Nagar, Kolathur, Chennai – 600099</span>
+            <span>📞 <a href="tel:09884907800">098849 07800</a></span>
+            <span>⭐ Rated 4.9/5 by patients</span>
+        </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="luxury-nav">
-        <div class="nav-brand">V.G.</div>
-        <div class="nav-links">
-            <a href="#about" class="hover-link">About Us</a>
-            <a href="#expertise" class="hover-link">Expertise</a>
-            <a href="#dr-aravinth" class="hover-link">The Doctor</a>
-            <a href="#visit" class="hover-link">Visit Us</a>
+    <nav class="nav" id="mainNav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-brand">
+                <div class="brand-icon">VG</div>
+                <div class="brand-text">
+                    <strong>V.G. Multispeciality</strong>
+                    <small>Dental Clinic</small>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#doctor">Doctor</a>
+                <a href="#gallery">Clinic</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="#contact" class="nav-cta">Book Appointment</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        <a href="#visit" class="book-btn">Book Consultation</a>
     </nav>
 
-    <!-- Main Content -->
-    <main data-scroll-container>
-        
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <div class="hero-subtitle overflow-hidden">
-                    <span class="reveal-text">EST. 2011 • KOLATHUR, CHENNAI</span>
-                </div>
-                <h1 class="hero-title overflow-hidden">
-                    <div class="reveal-text delay-1">Preserve</div>
-                    <div class="reveal-text delay-2"><i class="gold-italic">Your</i> Smile</div>
-                </h1>
-            </div>
-            <div class="hero-image-wrapper reveal-image">
-                <img src="images/hero.png" alt="V.G. Multispeciality Dental Clinic">
-            </div>
-        </section>
+    <main>
 
-        <!-- Marquee -->
-        <div class="marquee-container">
-            <div class="marquee">
-                <span>PREVENTIVE CARE • EXPERT DIAGNOSIS • ADVANCED SURGERY • COSMETIC DENTISTRY • </span>
-                <span>PREVENTIVE CARE • EXPERT DIAGNOSIS • ADVANCED SURGERY • COSMETIC DENTISTRY • </span>
-            </div>
-        </div>
-
-        <!-- Stats Section (New) -->
-        <section class="stats-section bg-light-gray">
-            <div class="stats-grid">
-                <div class="stat-block reveal-up">
-                    <h2 class="stat-number">13+</h2>
-                    <p class="stat-label">Years of Excellence</p>
-                </div>
-                <div class="stat-block reveal-up delay-1">
-                    <h2 class="stat-number">10K+</h2>
-                    <p class="stat-label">Smiles Preserved</p>
-                </div>
-                <div class="stat-block reveal-up delay-2">
-                    <h2 class="stat-number">100%</h2>
-                    <p class="stat-label">Sterilization Protocol</p>
-                </div>
-                <div class="stat-block reveal-up delay-3">
-                    <h2 class="stat-number">05+</h2>
-                    <p class="stat-label">Eminent Specialists</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Clinic & Philosophy (New expanded) -->
-        <section id="about" class="philosophy-section">
-            <div class="philosophy-content">
-                <h4 class="gold-accent text-center">OUR PHILOSOPHY</h4>
-                <h2 class="section-title text-center mt-sm">Redefining Dental Care</h2>
-                <div class="philosophy-text mt-spacing reveal-up">
-                    <p class="body-text text-center">
-                        Founded in 2011, V.G. Multispeciality Dental Clinic has grown into Kolathur's premier destination for comprehensive oral healthcare. We believe that a visit to the dentist should not be driven by pain, but by the desire to maintain a perfect, healthy smile. 
-                    </p>
-                    <p class="body-text text-center mt-sm">
-                        By integrating cutting-edge technology with a comforting, luxurious environment, we eliminate dental anxiety. Our multidisciplinary approach ensures that whether you need a routine checkup or complex maxillofacial surgery, you receive world-class care under one roof.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Dr. Aravinth -->
-        <section id="dr-aravinth" class="about-section pt-0">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h4 class="gold-accent">CHIEF DENTAL SURGEON</h4>
-                    <h2 class="section-title">Dr. V. Aravinth <span>M.D.S.</span></h2>
-                    <p class="body-text mt-spacing">
-                        Managed by a Gold Medalist from the prestigious Government Dental College and Hospital, Chennai. Dr. Aravinth and his team of eminent specialists bring unparalleled expertise to every smile.
-                    </p>
-                    <p class="body-text mt-sm">
-                        At V.G. Multispeciality, utmost tooth care isn't just a promise—it's our standard. We focus on preventive measures at the earliest, ensuring your dental health is preserved for a lifetime.
-                    </p>
-                    
-                    <div class="medallion-badge mt-spacing">
-                        <div class="medallion">🥇</div>
-                        <div class="medallion-text">
-                            <strong>Gold Medalist</strong>
-                            <span>Excellence in Dentistry</span>
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">🥇 Gold Medalist Chief Surgeon · Est. 2011</div>
+                    <h1>Preserve <em>Your</em> Smile</h1>
+                    <p>Experience world-class preventive dental care at Kolathur's most trusted clinic. Managed by <strong>Dr. V. Aravinth M.D.S.</strong>, a Gold Medalist from Government Dental College, Chennai.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-gold">Book Consultation</a>
+                        <a href="tel:09884907800" class="btn btn-outline">📞 Call Now</a>
+                    </div>
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <strong>4.9★</strong>
+                            <span>Patient Rating</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-item">
+                            <strong>13+ Yrs</strong>
+                            <span>Serving Kolathur</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-item">
+                            <strong>10,000+</strong>
+                            <span>Happy Smiles</span>
                         </div>
                     </div>
                 </div>
-                <div class="about-images">
-                    <div class="image-large reveal-image-scroll">
-                        <img src="images/doctor.png" alt="Dr. V. Aravinth">
+                <div class="hero-visual">
+                    <img src="images/hero.png" alt="V.G. Multispeciality Dental Clinic – Modern Reception">
+                    <div class="hero-float-card float-1">
+                        <span class="float-icon">🦷</span>
+                        <div>
+                            <strong>Painless RCT</strong>
+                            <small>Advanced Rotary</small>
+                        </div>
                     </div>
-                    <div class="image-small parallax-img">
-                        <img src="images/clinic.png" alt="State of the art clinic">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Minimalist Services Accordion -->
-        <section id="expertise" class="services-section">
-            <div class="services-header">
-                <h2 class="section-title text-center">Our Expertise</h2>
-            </div>
-            
-            <div class="accordion-container">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>01. Preventive Dentistry</h3>
-                        <span class="icon">+</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Our core motto. We identify and address potential dental issues before they develop, utilizing state-of-the-art diagnostics to preserve your natural smile. Regular scaling, polishing, and oral cancer screenings.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>02. Advanced Dental Surgery</h3>
-                        <span class="icon">+</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Complex extractions and surgical procedures performed by eminent specialists in a highly sterile, comfortable environment. Painless wisdom tooth removal and bone grafting.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>03. Orthodontics & Implants</h3>
-                        <span class="icon">+</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Precision-engineered dental implants and alignment solutions to restore full function and flawless aesthetics to your teeth. We offer invisible aligners, traditional braces, and immediate loading implants.</p>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>04. Cosmetic Dentistry</h3>
-                        <span class="icon">+</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Transform your smile with bespoke porcelain veneers, professional teeth whitening, and complete smile designing tailored to your facial aesthetics.</p>
+                    <div class="hero-float-card float-2">
+                        <span class="float-icon">🛡️</span>
+                        <div>
+                            <strong>100% Sterile</strong>
+                            <small>Autoclave Protocol</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery / Visuals Section (New) -->
-        <section class="gallery-section">
-            <div class="gallery-header text-center mb-spacing">
-                <h4 class="gold-accent">INFRASTRUCTURE</h4>
-                <h2 class="section-title">The Clinic Experience</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item reveal-up">
-                    <img src="images/equipment.png" alt="Modern Dental Equipment">
-                    <div class="gallery-overlay">
-                        <span>State-of-the-art Equipment</span>
-                    </div>
+        <!-- ===== ABOUT / PHILOSOPHY ===== -->
+        <section class="about" id="about">
+            <div class="container about-grid">
+                <div class="about-left reveal-up">
+                    <h4 class="label">ABOUT THE CLINIC</h4>
+                    <h2>Kolathur's Premier<br>Dental Destination</h2>
+                    <p>V.G. Multispeciality Dental Clinic, situated at Kolathur near V4 Senthil Nagar Police Booth on the 200 feet road, opposite to Senthil Nagar HP Petrol Pump, has been serving the people of Chennai since <strong>2011</strong>.</p>
+                    <p>We are a premier dental clinic managed by <strong>Dr. V. Aravinth M.D.S. (Chief Dental Surgeon)</strong>, a Gold Medalist from the Government Dental College and Hospital, Chennai. Our team of eminent specialists covers every branch of dental care.</p>
+                    <p>Our motto is simple: <em>promote preventive measures at the earliest</em>. We don't just treat teeth — we preserve smiles for a lifetime.</p>
                 </div>
-                <div class="gallery-item reveal-up delay-1">
-                    <img src="images/clinic.png" alt="Clinic Interior">
-                    <div class="gallery-overlay">
-                        <span>Pristine Environment</span>
+                <div class="about-right">
+                    <div class="about-card reveal-up">
+                        <div class="card-num">01</div>
+                        <h3>Preventive Focus</h3>
+                        <p>We believe in catching problems early. Regular check-ups and early intervention save you from painful, costly treatments later.</p>
+                    </div>
+                    <div class="about-card reveal-up delay-1">
+                        <div class="card-num">02</div>
+                        <h3>Multi-Specialist Team</h3>
+                        <p>Not just one doctor — we have specialists in Orthodontics, Prosthodontics, Oral Surgery, Periodontics, and Pedodontics under one roof.</p>
+                    </div>
+                    <div class="about-card reveal-up delay-2">
+                        <div class="card-num">03</div>
+                        <h3>Modern Technology</h3>
+                        <p>Digital X-rays, advanced rotary endodontics, and surgical-grade sterilization ensure precision and safety in every procedure.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials (New) -->
-        <section class="testimonials-section bg-light-gray">
-            <h4 class="gold-accent text-center">TESTIMONIALS</h4>
-            <h2 class="section-title text-center mt-sm">Patient Stories</h2>
-            
-            <div class="testimonials-grid mt-spacing">
-                <div class="testimonial-card reveal-up">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Dr. Aravinth is exceptionally skilled. His preventive approach saved me from a complex root canal. The clinic is absolutely world-class."</p>
-                    <p class="author">— S. Ramesh, Kolathur</p>
+        <!-- ===== SERVICES ===== -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-head text-center reveal-up">
+                    <h4 class="label">COMPREHENSIVE TREATMENTS</h4>
+                    <h2>Our Dental Services</h2>
+                    <p class="section-desc">From routine check-ups to complex surgical procedures, our clinic is fully equipped to handle every aspect of oral healthcare.</p>
                 </div>
-                <div class="testimonial-card reveal-up delay-1">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Got my implants done here. The entire team of specialists is highly professional, and the hygiene standards are impeccable."</p>
-                    <p class="author">— Priya M.</p>
+
+                <div class="services-grid">
+                    <div class="service-card reveal-up">
+                        <div class="s-icon">🦷</div>
+                        <h3>General Dentistry</h3>
+                        <p>Comprehensive oral examination, professional cleaning & scaling, tooth-colored composite fillings, and preventive fluoride treatment.</p>
+                    </div>
+                    <div class="service-card reveal-up delay-1">
+                        <div class="s-icon">⚡</div>
+                        <h3>Root Canal Treatment</h3>
+                        <p>Painless single-sitting RCT using advanced rotary instruments. We save severely decayed teeth and eliminate infection with precision.</p>
+                    </div>
+                    <div class="service-card reveal-up delay-2">
+                        <div class="s-icon">🔩</div>
+                        <h3>Dental Implants</h3>
+                        <p>Permanent, natural-looking titanium implants to replace missing teeth. Immediate loading options available for faster results.</p>
+                    </div>
+                    <div class="service-card reveal-up">
+                        <div class="s-icon">😁</div>
+                        <h3>Cosmetic Dentistry</h3>
+                        <p>Smile designing, porcelain veneers, professional teeth whitening, and tooth jewellery for a confident, radiant smile.</p>
+                    </div>
+                    <div class="service-card reveal-up delay-1">
+                        <div class="s-icon">📏</div>
+                        <h3>Orthodontics</h3>
+                        <p>Metal braces, ceramic braces, and invisible clear aligners to correct misaligned teeth and bite issues for all age groups.</p>
+                    </div>
+                    <div class="service-card reveal-up delay-2">
+                        <div class="s-icon">🏥</div>
+                        <h3>Oral Surgery</h3>
+                        <p>Impacted wisdom tooth extraction, cyst removal, and minor oral surgical procedures performed by experienced maxillofacial specialists.</p>
+                    </div>
+                    <div class="service-card reveal-up">
+                        <div class="s-icon">👶</div>
+                        <h3>Pediatric Dentistry</h3>
+                        <p>Child-friendly dental care including pit & fissure sealants, fluoride application, space maintainers, and habit-breaking appliances.</p>
+                    </div>
+                    <div class="service-card reveal-up delay-1">
+                        <div class="s-icon">🪥</div>
+                        <h3>Periodontics</h3>
+                        <p>Treatment for gum diseases — deep scaling, root planing, flap surgery, and gum depigmentation for healthy, pink gums.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact/Visit Section -->
-        <section id="visit" class="visit-section">
-            <div class="visit-grid">
-                <div class="visit-image reveal-image-scroll">
-                    <img src="images/hero.png" alt="Clinic Ambience">
+        <!-- ===== DOCTOR ===== -->
+        <section class="doctor" id="doctor">
+            <div class="container doctor-grid">
+                <div class="doctor-img reveal-up">
+                    <img src="images/doctor.png" alt="Dr. V. Aravinth M.D.S. – Chief Dental Surgeon">
+                    <div class="doctor-badge">
+                        <span class="badge-big">🥇</span>
+                        <span>Gold Medalist</span>
+                    </div>
                 </div>
-                <div class="visit-info">
-                    <h2 class="section-title">Visit the Clinic</h2>
+                <div class="doctor-info reveal-up delay-1">
+                    <h4 class="label">CHIEF DENTAL SURGEON</h4>
+                    <h2>Dr. V. Aravinth <span>M.D.S.</span></h2>
+                    <div class="doctor-qual">
+                        <div class="qual-item">
+                            <strong>M.D.S.</strong>
+                            <span>Master of Dental Surgery</span>
+                        </div>
+                        <div class="qual-item">
+                            <strong>Gold Medal</strong>
+                            <span>Govt. Dental College, Chennai</span>
+                        </div>
+                    </div>
+                    <p>Dr. V. Aravinth achieved the prestigious Gold Medal during his postgraduate studies at the renowned Government Dental College and Hospital, Chennai — one of the most competitive dental institutions in India.</p>
+                    <p>With over 13 years of clinical experience, he brings unparalleled expertise in advanced dental procedures. His calm demeanor and thorough explanations put even the most anxious patients at ease.</p>
+                    <p>Under his leadership, V.G. Multispeciality Dental Clinic has grown into Kolathur's most trusted dental practice, earning a <strong>4.9-star rating</strong> from thousands of satisfied patients.</p>
+                    <div class="doctor-highlights">
+                        <div class="dh-item">✓ Advanced Diagnostics & Treatment Planning</div>
+                        <div class="dh-item">✓ Painless Root Canal Procedures</div>
+                        <div class="dh-item">✓ Dental Implant Specialist</div>
+                        <div class="dh-item">✓ Cosmetic Smile Designing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALLERY ===== -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-head text-center reveal-up">
+                    <h4 class="label">OUR INFRASTRUCTURE</h4>
+                    <h2>The Clinic Experience</h2>
+                    <p class="section-desc">A clean, comfortable, and technologically advanced environment designed to make your dental visit a pleasant experience.</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item gi-large reveal-up">
+                        <img src="images/clinic.png" alt="Modern dental operatory with advanced equipment">
+                        <div class="gi-overlay"><span>Advanced Dental Operatory</span></div>
+                    </div>
+                    <div class="gallery-item gi-small reveal-up delay-1">
+                        <img src="images/equipment.png" alt="State-of-the-art dental technology">
+                        <div class="gi-overlay"><span>Cutting-Edge Technology</span></div>
+                    </div>
+                    <div class="gallery-item gi-small reveal-up delay-2">
+                        <img src="images/hero.png" alt="Welcoming clinic reception area">
+                        <div class="gi-overlay"><span>Welcoming Reception</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== REVIEWS ===== -->
+        <section class="reviews" id="reviews">
+            <div class="container">
+                <div class="section-head text-center reveal-up">
+                    <h4 class="label">PATIENT TESTIMONIALS</h4>
+                    <h2>What Our Patients Say</h2>
+                    <div class="review-summary">
+                        <span class="big-stars">★★★★★</span>
+                        <span class="review-score">4.9 out of 5</span>
+                        <span class="review-count">Based on patient reviews</span>
+                    </div>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card reveal-up">
+                        <div class="r-stars">★★★★★</div>
+                        <p class="r-text">"Dr. Aravinth is exceptionally skilled and patient. He explained my entire treatment plan clearly before proceeding. The wisdom tooth extraction was completely painless. Highly recommend!"</p>
+                        <div class="r-author">
+                            <div class="r-avatar">SR</div>
+                            <div>
+                                <strong>S. Ramesh</strong>
+                                <small>Kolathur, Chennai</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card reveal-up delay-1">
+                        <div class="r-stars">★★★★★</div>
+                        <p class="r-text">"Got my dental implants done here and I'm extremely happy with the results. The clinic is very clean, equipment looks top-notch, and the staff is friendly and professional."</p>
+                        <div class="r-author">
+                            <div class="r-avatar">PM</div>
+                            <div>
+                                <strong>Priya M.</strong>
+                                <small>Villivakkam</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card reveal-up delay-2">
+                        <div class="r-stars">★★★★★</div>
+                        <p class="r-text">"Very calm and relaxed atmosphere. I'm usually very nervous about dental visits, but Dr. Aravinth made the entire experience comfortable. My root canal was done in a single sitting!"</p>
+                        <div class="r-author">
+                            <div class="r-avatar">AK</div>
+                            <div>
+                                <strong>Anitha K.</strong>
+                                <small>Perambur</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-info reveal-up">
+                    <h4 class="label">GET IN TOUCH</h4>
+                    <h2>Visit Our Clinic</h2>
+                    <p>Ready to preserve your smile? Walk in during our consultation hours or call ahead to schedule an appointment with Dr. Aravinth.</p>
                     
-                    <div class="info-block mt-spacing">
-                        <h4 class="gold-accent">LOCATION</h4>
-                        <p class="body-text">
-                            Plot no 14b, 15th cross street, 3rd -99, Main Rd,<br>
-                            Senthil Nagar, Kolathur,<br>
-                            Chennai, Tamil Nadu 600099
-                        </p>
-                        <p class="sub-text mt-sm">Opposite to Senthil Nagar (HP) Petrol Pump, near V_4 Police Booth.</p>
+                    <div class="contact-details">
+                        <div class="cd-item">
+                            <div class="cd-icon">📍</div>
+                            <div>
+                                <strong>Address</strong>
+                                <p>Plot No. 14B, 15th Cross Street, 3rd Main Road,<br>Senthil Nagar, Kolathur, Chennai – 600099</p>
+                                <small>Opposite Senthil Nagar HP Petrol Pump, near V4 Police Booth, 200 Feet Road</small>
+                            </div>
+                        </div>
+                        <div class="cd-item">
+                            <div class="cd-icon">📞</div>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:09884907800" class="phone-link">098849 07800</a>
+                            </div>
+                        </div>
+                        <div class="cd-item">
+                            <div class="cd-icon">🕒</div>
+                            <div>
+                                <strong>Consultation Hours</strong>
+                                <div class="hours-table">
+                                    <div class="hours-row">
+                                        <span>Monday – Saturday</span>
+                                        <span>5:30 PM – 9:30 PM</span>
+                                    </div>
+                                    <div class="hours-row">
+                                        <span>Sunday</span>
+                                        <span>10:00 AM – 12:30 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="info-block mt-spacing">
-                        <h4 class="gold-accent">HOURS</h4>
-                        <p class="body-text">Monday – Saturday: 5:00 PM – 9:00 PM</p>
-                        <p class="body-text">Sunday: Closed</p>
+
+                    <div class="map-embed">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0!2d80.2130!3d13.1220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA3JzE5LjIiTiA4MMKwMTInNDYuOCJF!5e0!3m2!1sen!2sin!4v1" 
+                            width="100%" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy">
+                        </iframe>
                     </div>
-                    
-                    <div class="info-block mt-spacing">
-                        <h4 class="gold-accent">CONTACT</h4>
-                        <a href="tel:09884907800" class="huge-phone hover-link">098849 07800</a>
+                </div>
+
+                <div class="contact-form-wrap reveal-up delay-1">
+                    <div class="form-card">
+                        <h3>Book an Appointment</h3>
+                        <p>Fill in your details and we'll get back to you to confirm your appointment.</p>
+                        <form id="appointmentForm">
+                            <div class="form-group">
+                                <label for="patientName">Full Name *</label>
+                                <input type="text" id="patientName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="patientPhone">Phone *</label>
+                                    <input type="tel" id="patientPhone" placeholder="+91 XXXXX XXXXX" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patientAge">Age</label>
+                                    <input type="number" id="patientAge" placeholder="Age" min="1" max="120">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="visitReason">Reason for Visit *</label>
+                                <select id="visitReason" required>
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option>General Check-up & Cleaning</option>
+                                    <option>Toothache / Pain</option>
+                                    <option>Root Canal Treatment</option>
+                                    <option>Dental Implant Consultation</option>
+                                    <option>Braces / Orthodontic Consultation</option>
+                                    <option>Cosmetic Dentistry / Whitening</option>
+                                    <option>Wisdom Tooth Issue</option>
+                                    <option>Gum Problem</option>
+                                    <option>Child's Dental Visit</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Timing</label>
+                                <select id="preferredTime">
+                                    <option value="" disabled selected>Select preferred slot</option>
+                                    <option>Weekday Evening (5:30–9:30 PM)</option>
+                                    <option>Sunday Morning (10:00 AM–12:30 PM)</option>
+                                    <option>Any available slot</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-gold btn-full" id="submitBtn">Request Appointment</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -257,12 +408,49 @@
 
     </main>
 
-    <!-- Grand Footer -->
-    <footer class="grand-footer">
-        <h1 class="footer-huge-text">V.G. DENTAL</h1>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="nav-brand">
+                    <div class="brand-icon">VG</div>
+                    <div class="brand-text">
+                        <strong>V.G. Multispeciality</strong>
+                        <small>Dental Clinic</small>
+                    </div>
+                </div>
+                <p class="footer-motto">"Preserve Your Smile 😀"</p>
+                <p class="footer-desc">Premier dental care in Kolathur, Chennai. Serving the community with dedication and excellence since 2011.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#doctor">Our Doctor</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <a href="#services">General Dentistry</a>
+                <a href="#services">Root Canal Treatment</a>
+                <a href="#services">Dental Implants</a>
+                <a href="#services">Orthodontics</a>
+                <a href="#services">Cosmetic Dentistry</a>
+            </div>
+            <div class="footer-col">
+                <h4>Clinic Hours</h4>
+                <p>Mon–Sat: 5:30 PM – 9:30 PM</p>
+                <p>Sunday: 10:00 AM – 12:30 PM</p>
+                <br>
+                <h4>Emergency</h4>
+                <a href="tel:09884907800" class="footer-phone">098849 07800</a>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 V.G. Multispeciality Dental Clinic. All Rights Reserved.</p>
-            <p>Designed with Excellence.</p>
+            <div class="container footer-bottom-inner">
+                <p>© 2024 V.G. Multispeciality Dental Clinic, Kolathur, Chennai. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 

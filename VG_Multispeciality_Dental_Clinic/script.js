@@ -1,99 +1,118 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Custom Cursor
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
 
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
+    // ===== LOADER =====
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => loader.classList.add('done'), 1800);
+    });
+    // Fallback in case load already fired
+    setTimeout(() => loader.classList.add('done'), 2200);
 
-        // Dot follows instantly
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
+    // ===== CUSTOM CURSOR =====
+    const dot = document.querySelector('.cursor-dot');
+    const outline = document.querySelector('.cursor-outline');
+    if (dot && outline && window.matchMedia('(pointer: fine)').matches) {
+        let mouseX = 0, mouseY = 0, outX = 0, outY = 0;
 
-        // Outline has slight delay via CSS transitions usually, 
-        // but let's animate it with JS for smoothness if preferred, 
-        // or just use direct assignment (CSS transition handles the lag)
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.left = mouseX + 'px';
+            dot.style.top = mouseY + 'px';
+        });
+
+        function animateOutline() {
+            outX += (mouseX - outX) * 0.15;
+            outY += (mouseY - outY) * 0.15;
+            outline.style.left = outX + 'px';
+            outline.style.top = outY + 'px';
+            requestAnimationFrame(animateOutline);
+        }
+        animateOutline();
+
+        // Grow cursor on interactive elements
+        document.querySelectorAll('a, button, .service-card, .about-card, .review-card, .gallery-item').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                dot.style.width = '10px';
+                dot.style.height = '10px';
+                outline.style.width = '52px';
+                outline.style.height = '52px';
+                outline.style.borderColor = 'rgba(194,155,98,0.4)';
+            });
+            el.addEventListener('mouseleave', () => {
+                dot.style.width = '6px';
+                dot.style.height = '6px';
+                outline.style.width = '36px';
+                outline.style.height = '36px';
+                outline.style.borderColor = '';
+            });
+        });
+    }
+
+    // ===== NAVBAR SCROLL =====
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    // Loader Remove
-    const loader = document.querySelector('.loader');
-    const revealTexts = document.querySelectorAll('.reveal-text');
-    const revealImage = document.querySelector('.reveal-image');
+    // ===== MOBILE MENU =====
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (toggle && navLinks) {
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        // Close on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+    }
 
-    setTimeout(() => {
-        loader.classList.add('hidden');
-        
-        // Trigger initial hero animations after loader hides
-        setTimeout(() => {
-            revealTexts.forEach(el => el.classList.add('active'));
-            if(revealImage) revealImage.classList.add('active');
-        }, 800);
-    }, 1500);
-
-    // Scroll Animations
-    const scrollRevealImages = document.querySelectorAll('.reveal-image-scroll');
-    const parallaxImgs = document.querySelectorAll('.parallax-img');
-
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: "0px 0px -100px 0px"
-    };
-
-    const observer = new IntersectionObserver((entries) => {
+    // ===== SCROLL REVEAL =====
+    const revealEls = document.querySelectorAll('.reveal-up');
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    scrollRevealImages.forEach(img => observer.observe(img));
+    revealEls.forEach(el => revealObserver.observe(el));
 
-    // Simple Parallax Effect
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        
-        parallaxImgs.forEach(img => {
-            const speed = 0.1;
-            const yPos = -(scrolled * speed);
-            img.style.transform = `translateY(${yPos}px)`;
-        });
-    });
-
-    // Accordion Logic
-    const accordionItems = document.querySelectorAll('.accordion-item');
-
-    accordionItems.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        
-        header.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all
-            accordionItems.forEach(acc => {
-                acc.classList.remove('active');
-                acc.querySelector('.accordion-content').style.maxHeight = null;
-            });
-
-            // Open if wasn't active
-            if (!isActive) {
-                item.classList.add('active');
-                const content = item.querySelector('.accordion-content');
-                content.style.maxHeight = content.scrollHeight + "px";
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offset = nav.offsetHeight + 8;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         });
     });
-    
-    // Open first accordion by default
-    if(accordionItems.length > 0) {
-        accordionItems[0].classList.add('active');
-        const firstContent = accordionItems[0].querySelector('.accordion-content');
-        firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+
+    // ===== FORM SUBMISSION =====
+    const form = document.getElementById('appointmentForm');
+    const submitBtn = document.getElementById('submitBtn');
+    if (form && submitBtn) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const origText = submitBtn.textContent;
+            submitBtn.textContent = '✓ Request Sent Successfully!';
+            submitBtn.style.background = '#22C55E';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                submitBtn.textContent = origText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+                form.reset();
+            }, 3500);
+        });
     }
 });
